@@ -1,0 +1,71 @@
+#valentine-container .heart-container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: -13%;
+  left: -3%;
+	z-index: 3;
+	pointer-events: none;
+
+}
+
+#valentine-container .heart-container .heart {
+	width: 15%;
+	height: 45%;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+#valentine-container .heart-container .heart img {
+	object-fit: contain !important;
+}
+
+#valentine-container .lovely {
+	width: min(35%, 541px);
+	height: min(24%, 90px);
+}
+
+#valentine-container .lovely img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+#valentine-container .promo-container {
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 32px;
+}
+
+#valentine-container .promo-container #copy-code {
+	border-radius: 8px;
+	border: 1px solid  #9747FF;
+	background: transparent;
+	display: flex;
+	padding: 6px 10px;
+	align-items: center;
+	gap: 10px;
+
+	color:  #9747FF;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 2;
+	cursor: pointer;
+}
+
+
+#valentine-container .promo-container #copy-code:active {
+	background: #9747FF;
+	color:#fff;
+}
+
+#valentine-container .promo-container #copy-code:active > svg path {
+	stroke: #FFF;
+}
