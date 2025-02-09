@@ -3,7 +3,7 @@
 	height: 100%;
 	position: absolute;
 	top: -13%;
-  left: -3%;
+	left: -3%;
 	z-index: 3;
 	pointer-events: none;
 
@@ -51,8 +51,7 @@
 	padding: 6px 10px;
 	align-items: center;
 	gap: 10px;
-
-	color:  #9747FF;
+	color: #9747FF;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 300;
@@ -60,12 +59,20 @@
 	cursor: pointer;
 }
 
-
-#valentine-container .promo-container #copy-code:active {
+#valentine-container .promo-container #copy-code.coppyed {
 	background: #9747FF;
-	color:#fff;
+	color: #fff;
 }
 
-#valentine-container .promo-container #copy-code:active > svg path {
+#valentine-container .promo-container #copy-code.coppyed svg path {
+	stroke: #FFF;
+}
+
+#valentine-container .promo-container #copy-code:hover {
+	border-color: #fff;
+	color: #fff;
+}
+
+#valentine-container .promo-container #copy-code:hover svg path {
 	stroke: #FFF;
 }

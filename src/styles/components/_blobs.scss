@@ -1,0 +1,92 @@
+@use '../animations';
+
+.valentine__blobs {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #eee;
+}
+
+.valentine__blobs-glass {
+	width: 100%;
+	height: 100%;
+	backdrop-filter: blur(140px);
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.valentine__blobs-list {
+	width: 100%;
+	height: 100%;
+}
+
+.valentine__blob {
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	width: 300px; /* Размер каждого круга */
+	height: 300px;
+	border-radius: 50%; /* Круглая форма */
+	pointer-events: none; /* Чтобы клики не влияли на анимацию */
+	animation: move 5s linear infinite; /* Анимация движения */
+}
+
+
+/* Цвета для blob'ов */
+    .bouncing-blob--blue {
+      background: rgba(85, 150, 255, 0.8);
+    }
+
+    .bouncing-blob--white {
+      background: rgba(255, 255, 255, 0.8);
+      width: 100px;
+      height: 100%;
+    }
+
+    .bouncing-blob--purple {
+      background: rgba(150, 85, 255, 0.8);
+    }
+
+    .bouncing-blob--pink {
+      background: rgba(255, 85, 150, 0.8);
+    }
+
+    /* Уникальные анимации для каждого блоба */
+    .bouncing-blob:nth-child(1) {
+      animation-delay: 0s;
+      animation-duration: 6s;
+    }
+
+    .bouncing-blob:nth-child(2) {
+      animation-delay: 1s;
+      animation-duration: 7s;
+    }
+
+    .bouncing-blob:nth-child(3) {
+      animation-delay: 2s;
+      animation-duration: 6.5s;
+    }
+
+    .bouncing-blob:nth-child(4) {
+      animation-delay: 3s;
+      animation-duration: 8s;
+    }
+
+    .bouncing-blob:nth-child(5) {
+      animation-delay: 4s;
+      animation-duration: 7.5s;
+    }
+
+    .bouncing-blob:nth-child(6) {
+      animation-delay: 5s;
+      animation-duration: 9s;
+    }
+
+    .bouncing-blob:nth-child(7) {
+      animation-delay: 6s;
+      animation-duration: 8.5s;
+    }

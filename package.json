@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "sass": "^1.83.4",
     "vite": "^5.2.12",
     "vite-plugin-monkey": "^4.0.0"
   }

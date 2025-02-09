@@ -1,0 +1,18 @@
+:root {
+	/* Цвета */
+	--color-primary: #000;
+	--color-background: #fff;
+	--color-accent: #d8242a;
+	--color-text: #000;
+
+	/* Размеры шрифтов */
+	--conditions-title: 20px;
+	--condition-offer: 20px;
+	--conditions-header-padding: 16px 16px 16px 24px;
+}
+
+@media (min-width: 1280px) {
+	:root {
+		--conditions-header-padding: 24px;
+	}
+}
