@@ -1,6 +1,6 @@
 <section class="valentine">
 	<div class="valentine__container">
-		<button class="valentine__trigger">
+		<button class="valentine__trigger js-hidden">
 			<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
 				<circle cx="16" cy="16" r="12" stroke="#535353"/>
 				<path d="M16 24V12" stroke="#535353" stroke-linejoin="round"/>
@@ -9,9 +9,13 @@
 		</button>
 
 		<div class="valentine__screen valentine__screen--start">
-			<h2 class="valentine__title">Для каждого&nbsp;&mdash; кусочек любви<br> от&nbsp;Sunmar</h2>
-			<p class="valentine__description">Лопайте и выигрывайте</p>
-			<button class="valentine__button" id="start">Хлоп</button>
+			<h2 class="valentine__title">
+				Мы&nbsp;спрятали сюрприз
+				для вас и&nbsp;вашей
+				половинки!
+			</h2>
+			<p class="valentine__description">Что скрывается за&nbsp;сердечками?</p>
+			<button class="valentine__button" id="start">Узнать</button>
 		</div>
 
 		<div class="valentine__screen valentine__screen--video vimeo-video-box">
@@ -19,7 +23,7 @@
 			<div class="valentine__poster"></div>
 		</div>
 
-		<div class="valentine__heart-container"></div>
+		<div class="valentine__heart-container js-hidden"></div>
 
 		<div class="valentine__blobs">
 			<div class="valentine__blobs-glass"></div>
@@ -34,19 +38,19 @@
 			</div>
 		</div>
 
-		<!--<div class="valentine__promo">-->
-		<!--	<div class="valentine__promo-image">-->
-		<!--		<img src="https://b2ccdn.sunmar.ru/content/LOVEFLY.png" alt="Промокод LOVEFLY">-->
-		<!--	</div>-->
-		<!--	<button class="valentine__copy" id="copy-code">-->
-		<!--		<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">-->
-		<!--			<path d="M8.33399 15.8334H15.5839C16.6885 15.8334 17.5839 14.938 17.5839 13.8334V6.83662C17.5839 6.25277 17.3288 5.69807 16.8855 5.31811L13.1873 2.14823C12.8248 1.83753 12.3631 1.66675 11.8857 1.66675H8.33398C7.22941 1.66675 6.33398 2.56218 6.33398 3.66675V13.8334C6.33398 14.938 7.22942 15.8334 8.33399 15.8334Z" stroke="#9747FF" stroke-linejoin="round"/>-->
-		<!--			<path d="M3.83398 4.16675V16.3334C3.83398 17.438 4.72942 18.3334 5.83399 18.3334H15.0839" stroke="#9747FF" stroke-linejoin="round"/>-->
-		<!--			<path d="M12.625 2.021V3.91683C12.625 5.0214 13.5204 5.91683 14.625 5.91683H17.2292" stroke="#9747FF" stroke-linejoin="round"/>-->
-		<!--		</svg>-->
-		<!--		Скопировать-->
-		<!--	</button>-->
-		<!--</div>-->
+		<div class="valentine__promo">
+			<div class="valentine__promo-image">
+				<img src="https://b2ccdn.sunmar.ru/content/LOVEFLY.png" alt="Промокод LOVEFLY">
+			</div>
+			<button class="valentine__copy" id="copy-code">
+				<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none">
+					<path d="M8.33399 15.8334H15.5839C16.6885 15.8334 17.5839 14.938 17.5839 13.8334V6.83662C17.5839 6.25277 17.3288 5.69807 16.8855 5.31811L13.1873 2.14823C12.8248 1.83753 12.3631 1.66675 11.8857 1.66675H8.33398C7.22941 1.66675 6.33398 2.56218 6.33398 3.66675V13.8334C6.33398 14.938 7.22942 15.8334 8.33399 15.8334Z" stroke="#9747FF" stroke-linejoin="round"/>
+					<path d="M3.83398 4.16675V16.3334C3.83398 17.438 4.72942 18.3334 5.83399 18.3334H15.0839" stroke="#9747FF" stroke-linejoin="round"/>
+					<path d="M12.625 2.021V3.91683C12.625 5.0214 13.5204 5.91683 14.625 5.91683H17.2292" stroke="#9747FF" stroke-linejoin="round"/>
+				</svg>
+				Скопировать
+			</button>
+		</div>
 
 		<div class="valentine__conditions js-hidden">
 			<div class="valentine__conditions-header">

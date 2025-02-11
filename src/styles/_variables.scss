@@ -11,6 +11,12 @@
 	--conditions-header-padding: 16px 16px 16px 24px;
 }
 
+@media (min-width: 328px) {
+	:root {
+		--conditions-header-padding: 16px;
+	}
+}
+
 @media (min-width: 1280px) {
 	:root {
 		--conditions-header-padding: 24px;
