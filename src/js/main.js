@@ -3,80 +3,9 @@ import '../styles/style.scss'
 import {hostReactAppReady, vimeoAutoPlay} from './utils'
 
 let HEARTS = null
-class Heart {
-	constructor(container, totalHearts = 20, borderReductionPercent = 20) {
-		console.log(totalHearts)
-		this.container = container
-		this.totalHearts = totalHearts
-		this.borderReductionPercent = borderReductionPercent / 100 // Преобразуем в долю (20% → 0.2)
-		this.usedPositions = new Set() // Храним использованные позиции
-		this.createHearts()
-	}
-
-	getRandomPosition() {
-		const rect = this.container.getBoundingClientRect()
-		const reducedWidth = (1 - this.borderReductionPercent) * 100 // Уменьшаем ширину в процентах
-		const reducedHeight = (1 - this.borderReductionPercent) * 100 // Уменьшаем высоту в процентах
-		const offsetX = (this.borderReductionPercent / 2) * 100 // Смещение влево
-		const offsetY = (this.borderReductionPercent / 2) * 100 // Смещение вверх
-
-		let x, y, key
-		let maxAttempts = 100
-		let attempts = 0
-		do {
-			x = Math.random() * reducedWidth + offsetX
-			y = Math.random() * reducedHeight + offsetY
-			key = `${x.toFixed(2)},${y.toFixed(2)}` // Больше точности
-			attempts++
-		} while (this.usedPositions.has(key) && attempts < maxAttempts)
-
-		this.usedPositions.add(key)
-		return { x, y }
-	}
-
-	createHearts() {
-		for (let i = 0; i < this.totalHearts; i++) {
-			this.createHeart()
-		}
-	}
-
-	createHeart() {
-		// Создаём элемент сердца
-		const heart = document.createElement('div')
-		heart.classList.add('heart')
-
-		// Добавляем картинку внутрь сердца
-		const img = document.createElement('img')
-		img.src = getRandomHeartImage()
-		img.alt = 'Heart'
-		heart.appendChild(img)
-
-		// Добавляем сердечко в контейнер
-		this.container.appendChild(heart)
-
-		// Получаем случайные координаты
-		const { x, y } = this.getRandomPosition()
-
-		// Устанавливаем позицию сердечка в %
-		heart.style.left = `${x}%`
-		heart.style.top = `${y}%`
-	}
-}
-
-// Функция для случайного выбора изображения сердца
-function getRandomHeartImage() {
-	const images = [
-		'https://b2ccdn.sunmar.ru/content/landing-pages/valentine/hb.png',
-		'https://b2ccdn.sunmar.ru/content/landing-pages/valentine/hr.png',
-	]
-	const randomIndex = Math.floor(Math.random() * images.length)
-	return images[randomIndex]
-}
-
-
 
 hostReactAppReady().then(() => {
-	if(!document.querySelector('section.valentine')) {
+	if (!document.querySelector('section.valentine')) {
 		document
 			.querySelector('#quick-search-tab-area + div')
 			.insertAdjacentHTML('afterend', markup)
@@ -103,7 +32,7 @@ hostReactAppReady().then(() => {
 	trigger.addEventListener('click', () => {
 		conditions.classList.remove('js-hidden')
 	})
-	closeConditionsBtn.addEventListener('click', ()=> {
+	closeConditionsBtn.addEventListener('click', () => {
 		conditions.classList.add('js-hidden')
 	})
 	expand.addEventListener('click', () => {
@@ -111,15 +40,10 @@ hostReactAppReady().then(() => {
 	})
 
 	//3) Логика сердечек
-	const ua = navigator.userAgent;
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+	document.querySelector('.valentine__push-to-begin span').addEventListener('click', (e) => {
+		e.currentTarget.closest('div').classList.add('js-hidden')
+	})
 	const container = document.querySelector('.valentine__heart-container')
-	if (isMobile) {
-	 	HEARTS ||= new Heart(container, 40, 20, 50)
-	} else {
-		HEARTS ||= new Heart(container, 50, 20, 50)
-	}
-
 	let clickCounter = 0
 
 	function handleClick(e) {
