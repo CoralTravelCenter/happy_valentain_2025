@@ -2,8 +2,6 @@ import markup from '../markup.html?raw'
 import '../styles/style.scss'
 import {hostReactAppReady, vimeoAutoPlay} from './utils'
 
-let HEARTS = null
-
 hostReactAppReady().then(() => {
 	if (!document.querySelector('section.valentine')) {
 		document
@@ -21,6 +19,7 @@ hostReactAppReady().then(() => {
 		heartsContainer.classList.remove('js-hidden')
 		startScreen.classList.add('js-hidden')
 		videoScreen.classList.add('js-hidden')
+		ym(215233, 'reachGoal', 'start')
 	})
 
 	//2) Скрываем информацию об акции
@@ -31,6 +30,7 @@ hostReactAppReady().then(() => {
 	const conditions = document.querySelector('.valentine__conditions')
 	trigger.addEventListener('click', () => {
 		conditions.classList.remove('js-hidden')
+		ym(215233, 'reachGoal', 'finish')
 	})
 	closeConditionsBtn.addEventListener('click', () => {
 		conditions.classList.add('js-hidden')
@@ -76,5 +76,8 @@ hostReactAppReady().then(() => {
 			})
 	}
 
-	copyCode.addEventListener('click', () => copyPromoCode('LOVEFLY'))
+	copyCode.addEventListener('click', () => {
+		copyPromoCode('LOVEFLY')
+		ym(215233, 'reachGoal', 'promo')
+	})
 })
